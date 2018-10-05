@@ -2,8 +2,8 @@ require_relative('../db/sql_runner.rb')
 
 class Car
 #######################################################################
-  attr_reader
-  attr_accessor
+  attr_reader( :id, :shop_id)
+  attr_accessor( :make, :model, :style, :price, :image)
   #####################################################################
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -36,9 +36,9 @@ class Car
   def self.find(id)
     sql = "SELECT * FROM cars WHERE id = $1"
     values = [@id]
-    car_hash = SqlRunner.run(sql, values)
-    car = car_hash.map{|car| Car.new(car)}
-    return car
+    car = SqlRunner.run(sql, values)
+    result = Car.new(car.first)
+    return result
   end
   #####################################################################
   #####################################################################
