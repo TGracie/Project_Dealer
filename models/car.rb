@@ -20,14 +20,25 @@ class Car
   ## CLASS METHODS ##
 
   def self.all()
+    sql = "SELECT * FROM cars"
+    cars = SqlRunner.run(sql)
+    result = cars.map{|car| Car.new(car)}
+    return result
   end
   #####################################################################
 
   def self.delete_all()
+    sql = "DELETE FROM cars"
+    SqlRunner.run(sql)
   end
   #####################################################################
 
   def self.find(id)
+    sql = "SELECT * FROM cars WHERE id = $1"
+    values = [@id]
+    car_hash = SqlRunner.run(sql, values)
+    car = car_hash.map{|car| Car.new(car)}
+    return car
   end
   #####################################################################
   #####################################################################
@@ -49,10 +60,26 @@ class Car
   #####################################################################
 
   def update
+    sql = "UPDATE cars
+        SET (
+          make,
+          model,
+          style,
+          price,
+          image
+          ) =
+          ($1, $2, $3, $4, $5)
+          WHERE id = $6"
+          values = [@make, @model, @style, @price, @image, @id]
+          SqlRunner.run(sql, values)
   end
   #####################################################################
 
   def delete
+    sql = "DELETE * FROM cars
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
   #####################################################################
   #####################################################################
