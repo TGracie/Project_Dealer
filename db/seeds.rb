@@ -1,6 +1,7 @@
 require_relative('../models/shop.rb')
 require_relative('../models/car.rb')
 require_relative('../models/customer.rb')
+require('pry')
 
 Shop.delete_all()
 Car.delete_all()
@@ -61,7 +62,15 @@ customer1 = Customer.new({
   "previous_brand" => "Volvo"
   })
 
+customer2 = Customer.new({
+  "name" => "Atlanta Pritchard-Barrett",
+  "budget" => 100000,
+  "email" => "321@fakemail.com",
+  "previous_brand" => "Saab"
+  })
+binding.pry
   customer1.save
+  customer2.save
 
 #######################################################################
 #######################################################################

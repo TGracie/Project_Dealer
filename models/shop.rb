@@ -67,8 +67,28 @@ class Shop
   ####################################################################
   # things to add......
   # stock function? what cars do we have in stock?
+  def stock_list
+    sql = "SELECT * FROM cars
+           WHERE shop_id = id"
+    cars = SqlRunner.run(sql)
+    result = cars.map{|car| Car.new(car)}
+    return result
+  end
+  #####################################################################
   #   brand function, see above
+  def brands
+    sql = "SELECT cars.make FROM cars
+           WHERE shop_id = id"
+    brands = SqlRunner.run(sql)
+    result = brands.map{|brand| Car.new(brand)}
+    return result
+  end
   #   price filtering? does this go here? maybe
+  #  stock valuation
+  def value
+    value = stock_list.price * stock_list.count
+    return value
+  end
 
 #######################################################################
 #######################################################################
