@@ -11,7 +11,7 @@ class Car
     @make = options['make']
     @model = options['model']
     @style = options['style']
-    @price = options['price']
+    @price = options['price'].to_i
     @image = options['image']
   end
 
