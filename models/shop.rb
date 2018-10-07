@@ -77,14 +77,19 @@ class Shop
   end
   ####################################################################
   #   brand function, see above
-  def brands ## working but returning all other fields as well, want just a list of brands
-    sql = "SELECT cars.make FROM cars
-           WHERE shop_id = $1"
-           values = [@id]
-    brands = SqlRunner.run(sql, values)
-    # result = brands.map{|brand| Car.new(brand)}
-    # return result
-    return brands
+  # def brands ## working but returning all other fields as well, want just a list of brands
+  #   sql = "SELECT cars.make FROM cars
+  #          WHERE shop_id = $1"
+  #          values = [@id]
+  #   brands = SqlRunner.run(sql, values)
+  #   result = brands.map{|brand| Car.new(brand)}
+  #   return result
+  #   # return brands
+  # end
+  # making it far more complex than it needs to be, follow the valuation function and just call the .make on all of them! Easy peasy!
+  def brands
+    car_brands = stock.map{|car| car.make}
+    return car_brands
   end
   #   price filtering? does this go here? maybe
 ######################################################################
@@ -95,7 +100,7 @@ class Shop
   end
   ####################################################################
 
-#######################################################################
-#######################################################################
-#######################################################################
+######################################################################
+######################################################################
+######################################################################
 end ## class end
