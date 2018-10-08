@@ -1,0 +1,17 @@
+<h1>Cars in Stock</h1>
+
+<p class="btn">
+<a class="btn--action" href="/cars/new">Add a new car!</a>
+</p>
+
+<ul>
+  <% for car in @cars %>
+  <li>
+    <p><%= car.make %></p>
+    <p><%= car.model %></p>
+    <p><%= car.style %></p>
+    <p>£<%= car.price %></p>
+    <p><%= car.image %></p>
+  </li>
+  <% end %>
+</ul>
