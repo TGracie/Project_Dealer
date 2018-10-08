@@ -1,7 +1,11 @@
 <form action="/cars" method="post">
 
-  <label for="shop">Dealership</label>
-  <input type="text" name="make" id="car-make"/>
+    <label for="shop_select">Select Dealer:</label>
+     <select name="shop_id" id="shop_select">
+       <% @shops.each do |shop| %>
+           <option value=<%= shop.id %>><%= shop.name %></option>
+       <% end %>
+     </select>
  <br>
   <label for="make">Make</label>
   <input type="text" name="make" id="car-make"/>
@@ -9,19 +13,19 @@
   <br>
 
     <label for="model">Model</label>
-    <input type="text" name="make" id="car-model">
+    <input type="text" name="model" id="car-model">
 
   <br>
 
     <label for="style-select">Choose Car Style</label>
     <select name="style" id="style-select">
-      <option value="sports">Sports</option>
-      <option value="super">Super</option>
-      <option value="convertible">Convertible</option>
-      <option value="suv">SUV</option>
-      <option value="estate">Estate</option>
-      <option value="saloon">Saloon</option>
-      <option value="electric">Electric</option>
+      <option value="Sports">Sports</option>
+      <option value="Super">Super</option>
+      <option value="Convertible">Convertible</option>
+      <option value="SUV">SUV</option>
+      <option value="Estate">Estate</option>
+      <option value="Saloon">Saloon</option>
+      <option value="Electric">Electric</option>
     </select>
 
   <br>

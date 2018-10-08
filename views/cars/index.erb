@@ -9,9 +9,8 @@
   <li>
     <p><%= car.make %></p>
     <p><%= car.model %></p>
-    <p><%= car.style %></p>
     <p>£<%= car.price %></p>
-    <p><%= car.image %></p>
+    <p><a href="/cars/<%= car.id %>">View Car</a></p>
   </li>
   <% end %>
 </ul>

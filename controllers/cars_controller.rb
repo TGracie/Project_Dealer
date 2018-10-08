@@ -12,6 +12,7 @@ get '/cars' do
 end
 
 get '/cars/new' do
+  @shops = Shop.all
   erb(:"cars/new")
 end
 

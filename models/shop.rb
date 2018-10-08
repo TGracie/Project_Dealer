@@ -28,6 +28,15 @@ class Shop
     sql = "DELETE FROM shops"
     SqlRunner.run(sql)
   end
+  ####################################################################
+
+  def self.find(id)
+    sql = "SELECT * FROM shops WHERE id = $1"
+    values = [@id]
+    shop = SqlRunner.run(sql, values)
+    result = Shop.new(shop.first)
+    return result
+  end
 
   ####################################################################
   ####################################################################

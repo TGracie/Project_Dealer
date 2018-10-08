@@ -1,0 +1,14 @@
+<h1>Dealerships</h1>
+
+<p class="btn">
+<a class="btn--action" href="/shops/new">Add a Dealership!</a>
+</p>
+
+<ul>
+  <% for shop in @shops %>
+  <li>
+    <p><%= shop.name %></p>
+    <p><a href="/shops/<%= shop.id %>">View Dealership</a></p>
+  </li>
+  <% end %>
+</ul>
