@@ -35,9 +35,10 @@ class Car
 
   def self.find(id)
     sql = "SELECT * FROM cars WHERE id = $1"
-    values = [@id]
+    values = [id]
     car = SqlRunner.run(sql, values)
-    result = Car.new(car.first)
+    result = Car.new(car[0])
+    # binding.pry
     return result
   end
   ####################################################################
