@@ -68,7 +68,7 @@ customer2 = Customer.new({
   "email" => "321@fakemail.com",
   "previous_brand" => "Saab"
   })
-binding.pry
+# binding.pry
   customer1.save
   customer2.save
 
