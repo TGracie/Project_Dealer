@@ -1,5 +1,5 @@
 <h2>Customer <%= @customer.id %> Details</h2>
-
+<br>
 <table>
   <tr>
     <th>ID</th>
@@ -14,11 +14,11 @@
     <td><%= @customer.email %></td>
     <td><%= @customer.previous_brand %></td>
     <td>£<%= @customer.budget %></td>
+    <td><a href="/customers/<%= @customer.id %>/edit">Edit</a></td>
+    <td><form class="" action="/customers/<%= @customer.id %>/delete" method="post">
+      <input type="submit" value="Delete"></td>
   </tr>
 </table>
 <br>
-<a href="/customers/<%= @customer.id %>/edit">Edit Customer Details</a>
-<br>
-<form class="" action="/customers/<%= @customer.id %>/delete" method="post">
-  <input type="submit" value="Delete Customer">
+
 </form>

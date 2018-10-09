@@ -77,6 +77,23 @@ class Customer
     values = [@id]
     SqlRunner.run(sql, values)
   end
+  #######################################################
+  #
+  # def dealers
+  #   sql = "SELECT * FROM cars WHERE make = $1"
+  #   values = [@previous_brand]
+  #   result = SqlRunner.run(sql, values)
+  #   dealers = Car.new(result)
+  #   return dealers
+  # end
+  ######################################################
+  def cars
+    sql = "SELECT * FROM cars WHERE make = $1"
+    values = [@previous_brand]
+    result = SqlRunner.run(sql, values)
+    cars = Car.new(result)
+    return cars
+  end
   #####################################################################
   #####################################################################
   #####################################################################
