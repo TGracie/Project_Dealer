@@ -6,6 +6,15 @@
   <p>Dealer Cash: £<%= @shop.till %></p>
   <a href="/shops/<%= @shop.id %>/edit">Edit Dealership Details</a>
 <hr>
+
+  <p>Cars in Stock</p>
+  <% for car in @cars %>
+  <ul>
+    <li><%= car.make %></li>
+    <li><%= car.model %></li>
+  </ul>
+  <% end %>
+
   <form action="/shops/<%= @shop.id %>/delete" method="post">
     <input type="submit" value="Delete Dealership">
 </form>

@@ -41,6 +41,15 @@ class Car
     # binding.pry
     return result
   end
+  ######################################################
+
+  def self.shop_all(id)
+    sql = "SELECT * FROM cars WHERE shop_id = $1"
+    values = [id]
+    car = SqlRunner.run(sql, values)
+    result = Car.new(car.first)
+    return result
+  end
   ####################################################################
   ####################################################################
   ## OBJECT METHODS ##
