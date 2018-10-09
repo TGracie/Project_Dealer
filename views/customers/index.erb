@@ -10,7 +10,7 @@
 </tr>
 <% for customer in @customers %>
 <tr>
-  <td><a href="/customers/:id"><%= customer.id %></a></td>
+  <td><a href="/customers/<%= customer.id %>"><%= customer.id %></a></td>
   <td><%= customer.name %></td>
   <td><%= customer.previous_brand %></td>
 </tr>

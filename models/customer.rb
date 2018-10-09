@@ -34,7 +34,7 @@ class Customer
   def self.find(id)
     sql = "SELECT * FROM customers
     WHERE id = $1"
-    values = [@id]
+    values = [id]
     result = SqlRunner.run(sql, values)
     customer = Customer.new(result.first)
     return customer
