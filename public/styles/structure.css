@@ -1,4 +1,43 @@
 body {
-  padding: 1em;
+  padding-top: 3px;
+  padding-left: 10px;
   border: 3px solid black;
+  /* background: url('/images/project_background.jpg') */
+  margin: 0px;
+  font-family: 'Arial', sans-serif;
+}
+
+
+h2 {
+  font-family: 'Bookman', serif;
+  font-size: 1.5em;
+  color: #035Eb4;
+}
+
+
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 20px;
+}
+nav ul li {
+  margin-bottom: 10px;
+}
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+
+a, a:link, a:visited {
+  color: #b42b03;
+}
+a:hover, a:active, a:focus {
+  color: #03b408;
+}
+
+
+main {
+  padding: 10px;
 }
