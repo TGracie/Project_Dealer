@@ -62,7 +62,7 @@ class Shop
            =
            ($1, $2)
            WHERE id = $3"
-           values = [@name, @till]
+           values = [@name, @till, @id]
     SqlRunner.run(sql, values)
   end
   ####################################################################

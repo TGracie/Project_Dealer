@@ -102,7 +102,7 @@ class Car
            values = [@shop_id]
     result = SqlRunner.run(sql, values)
     shop = Shop.new(result.first)
-    return result
+    return shop.name
   end
   ###################################################################
   ###################################################################

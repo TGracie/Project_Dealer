@@ -44,8 +44,10 @@ post('/shops/:id') do
   redirect to ('/shops')
 end
 
-# ## DELETE ##
-# post '/shops/:id/delete' do
-#   Shop.delete(params[:id])
-#   redirect to('/shops')
-# end
+## DELETE ##
+post ('/shops/:id/delete') do
+  id = params[:id].to_i
+  @shop = Shop.find(id)
+  @shop.delete
+  redirect to ('/shops')
+end
