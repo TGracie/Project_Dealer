@@ -1,0 +1,9 @@
+form {
+  border: 1px solid green;
+  margin: 3px;
+  padding: 5px;
+}
+
+:focus {
+  outline-color: red;
+}
