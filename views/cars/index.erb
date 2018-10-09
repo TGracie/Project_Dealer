@@ -1,17 +1,25 @@
-<h1>Cars in Stock</h1>
+<h1>Cars in Stock (All Dealerships)</h1>
 
 <p class="btn">
 <a class="btn--action" href="/cars/new">Add a new car!</a>
 </p>
 
-<ul>
-  <% for car in @cars %>
-  <li>
-    <p><%= car.shop %></p>
-    <p><%= car.make %></p>
-    <p><%= car.model %></p>
-    <p>£<%= car.price %></p>
-    <p><a href="/cars/<%= car.id %>">View Car</a></p>
-  </li>
+<table style="width:50%">
+  <tr>
+    <th>Car ID</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Price</th>
+    <th>Dealership</th>
+  </tr>
+<% for car in @cars %>
+  <tr>
+    <td> <a href="/cars/:id"><%= car.id %></a> </td>
+    <td><%= car.make %></td>
+    <td><%= car.model %></td>
+    <td> <%= car.price %></td>
+    <td> <a href="/shops/:id"> <%= car.shop %></a></td>
+  </tr>
   <% end %>
-</ul>
+
+</table>

@@ -84,6 +84,16 @@ class Shop
     result = cars.map{|car| Car.new(car)}
     return result
   end
+  # stock count function? what cars do we have in stock?
+  def stock_count
+    sql = "SELECT * FROM cars
+           WHERE shop_id = $1"
+           value = [@id]
+    cars = SqlRunner.run(sql, value)
+    result_array = cars.map{|car| Car.new(car)}
+    count = result_array.count
+    return count
+  end
   ####################################################################
   #   brand function, see above
   # def brands ## working but returning all other fields as well, want just a list of brands

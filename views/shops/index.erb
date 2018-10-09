@@ -1,14 +1,25 @@
-<h1>Dealerships</h1>
+<h1>All Dealerships</h1>
 
 <p class="btn">
 <a class="btn--action" href="/shops/new">Add a Dealership!</a>
 </p>
-
-<ul>
+<table>
+  <tr>
+    <th>Dealership ID</th>
+    <th>Name</th>
+    <th>Cash Float</th>
+    <th>Cars in Stock</th>
+    <th>Stock Value</th>
+    <th></th>
+  </tr>
   <% for shop in @shops %>
-  <li>
-    <p><%= shop.name %></p>
-    <p><a href="/shops/<%= shop.id %>">View Dealership</a></p>
-  </li>
+  <tr>
+    <td><%= shop.id %></td>
+    <td><%= shop.name %></td>
+    <td><%= shop.till %></td>
+    <td><%= shop.stock_count%></td>
+    <td><%= shop.value %></td>
+    <td> <a href="/shops/<%= shop.id %>">View</a> </td>
+  </tr>
   <% end %>
-</ul>
+</table>

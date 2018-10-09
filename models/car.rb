@@ -104,6 +104,15 @@ class Car
     shop = Shop.new(result.first)
     return shop.name
   end
+  ######################################################
+  def shop_id
+    sql = "SELECT * FROM shops
+           WHERE id = $1"
+           values = [@shop_id]
+    result = SqlRunner.run(sql, values)
+    shop = Shop.new(result.first)
+    return shop.id
+  end
   ###################################################################
   ###################################################################
   ###################################################################
