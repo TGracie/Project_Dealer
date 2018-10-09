@@ -14,11 +14,11 @@
   </tr>
 <% for car in @cars %>
   <tr>
-    <td> <a href="/cars/:id"><%= car.id %></a> </td>
+    <td> <a href="/cars/<%= car.id %>"><%= car.id %></a> </td>
     <td><%= car.make %></td>
     <td><%= car.model %></td>
-    <td> <%= car.price %></td>
-    <td> <a href="/shops/:id"> <%= car.shop %></a></td>
+    <td> £<%= car.price %></td>
+    <td> <a href="/shops/<%= car.shop_id %>"> <%= car.shop %></a></td>
   </tr>
   <% end %>
 

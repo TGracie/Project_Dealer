@@ -1,0 +1,25 @@
+<h2>Edit <%= @customer.name %></h2>
+
+<form action="/customers/<%= @id %>" method="post">
+
+  <div class="form-element">
+    <label for="customer-name">Customer Name</label>
+    <input type="text" name="name" value="<%=@customer.name %>" id="customer-name">
+  </div>
+
+  <div class="form-element">
+    <label for="customer-budget">Customer Budget</label>
+    <input type="number" name="budget" id="customer-budget" value="<%=@customer.name %>">
+  </div>
+
+  <div class="form-element">
+    <label for="customer-email">Customer Email</label>
+    <input type="text" name="email" value="<%=@customer.email %>" is="customer-email">
+  </div>
+
+  <div class="form-element">
+    <label for="customer-brand">Customer Previous Brand</label>
+    <input type="text" name="previous_brand" value="<%=@customer.previous_brand %>">
+  </div>
+  <input type="submit" value="Update Customer Details">
+</form>

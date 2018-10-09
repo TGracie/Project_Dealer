@@ -3,7 +3,7 @@
 <hr>
   <p>Dealership Name: <%= @shop.name %></p>
 <hr>
-  <p>Dealer Cash: <%= @shop.till %></p>
+  <p>Dealer Cash: £<%= @shop.till %></p>
   <a href="/shops/<%= @shop.id %>/edit">Edit Dealership Details</a>
 <hr>
   <form action="/shops/<%= @shop.id %>/delete" method="post">
