@@ -1,0 +1,18 @@
+<h2>Edit <%= @shop.name %></h2>
+
+<form action="/shops/<%= @id %>" method="post">
+
+  <div class="form-element">
+
+    <label for="Name">Dealership Name</label>
+    <input type="text" name="shop-name" id="shop-name" value="<%= @shop.name %>">
+
+  </div>
+  <div class="form-element">
+
+    <label for="till">Cash Float</label>
+    <input type="number" name="shop-till" id="shop-till" value="<%= @shop.till %>">
+
+  </div>
+  <input type="submit" value="Update Dealership">
+</form>

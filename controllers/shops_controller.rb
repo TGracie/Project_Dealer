@@ -29,4 +29,23 @@ get('/shops/:id') do
   @shop = Shop.find(id)
   erb(:"shops/show")
 end
-## DELETE ##
+
+## EDIT ##
+get('/shops/:id/edit') do
+  @id = params[:id].to_i
+  @shop = Shop.find(@id)
+  erb(:"shops/edit")
+end
+
+## UPDATE ##
+post('/shops/:id') do
+  shop = Shop.new(params)
+  shop.update
+  redirect to ('/shops')
+end
+
+# ## DELETE ##
+# post '/shops/:id/delete' do
+#   Shop.delete(params[:id])
+#   redirect to('/shops')
+# end

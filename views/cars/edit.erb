@@ -1,0 +1,45 @@
+<h2>Edit <%= @car.make %> <%= @car.model %></h2>
+<form action="/cars/<%= @id %>" method="POST">
+
+  <div class="wrapper">
+
+    <div class="form-element">
+      <label for="Make">Make</label>
+      <input type="text" name="Make" id="car-make" value="<%= @car.make %>">
+    </div>
+
+    <div class="form-element">
+      <label for="Model">Model</label>
+      <input type="text" name="Model" id="car-model" value="<%= @car.model %>">
+    </div>
+
+    <div class="form-element">
+      <label for="style-select">Car Style</label>
+      <select name="style" id="style-select">
+        <option value="Sports">Sports</option>
+        <option value="Super">Super</option>
+        <option value="Convertible">Convertible</option>
+        <option value="SUV">SUV</option>
+        <option value="Estate">Estate</option>
+        <option value="Saloon">Saloon</option>
+        <option value="Electric">Electric</option>
+        <option value="Hot-hatch">Hot-Hatchback</option>
+        <option value="Hatch">Hatch</option>
+      </select>
+    </div>
+
+    <div class="form-element">
+      <label for="Price">Price</label>
+      <input type="number" name="Price" value="<%= @car.price %>" id="car-price">
+    </div>
+
+    <div class="form-element">
+      <label for="Image">Add a picture URL</label>
+      <input type="text" name="image" value="<%= @car.image %>" id="car-image">
+    </div>
+
+  </div>
+  <br>
+  <input type="submit" value="Update Car">
+
+</form>

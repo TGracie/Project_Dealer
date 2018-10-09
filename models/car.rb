@@ -37,7 +37,7 @@ class Car
     sql = "SELECT * FROM cars WHERE id = $1"
     values = [id]
     car = SqlRunner.run(sql, values)
-    result = Car.new(car[0])
+    result = Car.new(car.first)
     # binding.pry
     return result
   end
@@ -76,8 +76,8 @@ class Car
   end
   ####################################################################
 
-  def delete
-    sql = "DELETE * FROM cars
+  def delete()
+    sql = "DELETE FROM cars
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
@@ -94,6 +94,15 @@ class Car
         return "This is a low-end car!"
       end
     end
+  end
+  ######################################################
+  def shop
+    sql = "SELECT * FROM shops
+           WHERE id = $1"
+           values = [@shop_id]
+    result = SqlRunner.run(sql, values)
+    shop = Shop.new(result.first)
+    return result
   end
   ###################################################################
   ###################################################################

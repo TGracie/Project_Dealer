@@ -26,8 +26,30 @@ end
 
 ## SHOW ##
 get ('/cars/:id') do
-  id = params[:id].to_i
+  @id = params[:id].to_i
   # binding.pry
-  @car = Car.find(id)
+  @car = Car.find(@id)
   erb(:"cars/show")
+end
+
+## EDIT ##
+get('/cars/:id/edit') do
+  @id = params[:id].to_i
+  @car = Car.find(@id)
+  erb(:"cars/edit")
+end
+
+## UPDATE ##
+post('/cars/:id') do
+  car = Car.new(params)
+  car.update
+  redirect to('/cars')
+end
+
+## DELETE ##
+post ('/cars/:id/delete') do
+  id = params[:id].to_i
+  @car = Car.find(id)
+  @car.delete()
+  redirect to('/cars')
 end
