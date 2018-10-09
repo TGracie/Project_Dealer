@@ -27,6 +27,7 @@ end
 get('/shops/:id') do
   id = params[:id].to_i
   @shop = Shop.find(id)
+  @cars = @shop.stock
   erb(:"shops/show")
   # @cars = Car.shop_all(id)
 end

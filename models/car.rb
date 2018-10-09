@@ -42,14 +42,16 @@ class Car
     return result
   end
   ######################################################
-
-  def self.shop_all(id)
-    sql = "SELECT * FROM cars WHERE shop_id = $1"
-    values = [id]
-    car = SqlRunner.run(sql, values)
-    result = Car.new(car.first)
-    return result
-  end
+  ## I want to return all cars where the shop_id matches a specific shop
+  ## need to select all from cars where the shop id matches the id of the dealer I'm passing in?
+  # not here! do in shop.rb
+  # def self.all_here(id)
+  #   sql = "SELECT * FROM cars WHERE shop_id = $1"
+  #   values = [id]
+  #   car = SqlRunner.run(sql, values)
+  #   result = Car.new(car.first)
+  #   return result
+  # end
   ####################################################################
   ####################################################################
   ## OBJECT METHODS ##
