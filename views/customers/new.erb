@@ -1,17 +1,30 @@
 <h2>Add a Customer</h2>
 <form action="/customers" method="post">
+  <div class="wrapper">
 
-<label for="customer-name">Name</label>
-<input type="text" name="name" id="customer-name">
-<br>
-<label for="customer-budget">Budget</label>
-<input type="number" name="budget" id="customer-budget" max="1000000">
-<br>
-<label for="customer-email">Contact Email</label>
-<input type="text" name="email" id="customer-email">
-<br>
-<label for="previous-brand">Previous Brand</label>
-<input type="text" name="previous_brand" id="previous-brand">
-<br>
-<input type="submit" value="Add the Customer">
+    <div class="form-element">
+      <label for="customer-name">Name</label>
+      <input type="text" name="name" id="customer-name">
+    </div>
+    <br>
+    <div class="form-element">
+      <label for="customer-budget">Budget</label>
+      <input type="number" name="budget" id="customer-budget" max="1000000">
+    </div>
+    <br>
+    <div class="form-element">
+      <label for="customer-email">Contact Email</label>
+      <input type="text" name="email" id="customer-email">
+    </div>
+    <br>
+    <div class="form-element">
+      <label for="previous-brand">Previous Brand</label>
+      <input type="text" name="previous_brand" id="previous-brand">
+    </div>
+    <br>
+    <div class="submit">
+      <input type="submit" value="Add the Customer">
+    </div>
+    
+  </div>
 </form>

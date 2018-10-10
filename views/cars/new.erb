@@ -1,47 +1,60 @@
 <h2>Add a Car</h2>
 <form action="/cars" method="post">
 
-    <label for="shop_select">Select Dealer:</label>
-     <select name="shop_id" id="shop_select">
-       <% @shops.each do |shop| %>
-           <option value=<%= shop.id %>><%= shop.name %></option>
-       <% end %>
-     </select>
- <br>
-  <label for="make">Make</label>
-  <input type="text" name="make" id="car-make"/>
+  <div class="wrapper">
 
-  <br>
+    <div class="form-element">
+      <label for="shop_select">Select Dealer:</label>
+      <select name="shop_id" id="shop_select">
+        <% @shops.each do |shop| %>
+            <option value=<%= shop.id %>><%= shop.name %></option>
+            <% end %>
+          </select>
+    </div>
 
-    <label for="model">Model</label>
-    <input type="text" name="model" id="car-model">
+        <br>
+    <div class="form-element">
+      <label for="make">Make</label>
+      <input type="text" name="make" id="car-make"/>
+    </div>
 
-  <br>
+        <br>
+    <div class="form-element">
+      <label for="model">Model</label>
+      <input type="text" name="model" id="car-model">
+    </div>
 
-    <label for="style-select">Choose Car Style</label>
-    <select name="style" id="style-select">
-      <option value="Sports">Sports</option>
-      <option value="Super">Super</option>
-      <option value="Convertible">Convertible</option>
-      <option value="SUV">SUV</option>
-      <option value="Estate">Estate</option>
-      <option value="Saloon">Saloon</option>
-      <option value="Electric">Electric</option>
-      <option value="Hot-hatch">Hot-Hatchback</option>
-      <option value="Hatch">Hatch</option>
-    </select>
+        <br>
+    <div class="form-element">
+      <label for="style-select">Choose Car Style</label>
+      <select name="style" id="style-select">
+        <option value="Sports">Sports</option>
+        <option value="Super">Super</option>
+        <option value="Convertible">Convertible</option>
+        <option value="SUV">SUV</option>
+        <option value="Estate">Estate</option>
+        <option value="Saloon">Saloon</option>
+        <option value="Electric">Electric</option>
+        <option value="Hot-hatch">Hot-Hatchback</option>
+        <option value="Hatch">Hatch</option>
+      </select>
+    </div>
 
-  <br>
+        <br>
+    <div class="form-element">
+      <label for="price">Price</label>
+      <input type="number" name="price" id="car-price">
+    </div>
 
-    <label for="price">Price</label>
-    <input type="number" name="price" id="car-price">
+        <br>
+    <div class="form-element">
+      <label for="image">Add a Picture (URL only for now)</label>
+      <input type="text" name="picture" id="car-image">
+    </div>
 
-  <br>
-
-    <label for="image">Add a Picture (URL only for now)</label>
-    <input type="text" name="picture" id="car-image">
-
-  <br>
-
-  <input type="submit" value="Add the Car">
+        <br>
+    </div> 
+    <div class="btn">
+      <input type="submit" value="Add the Car">
+    </div>
 </form>

@@ -1,24 +1,28 @@
 <h1>Cars in Stock (All Dealerships)</h1>
 
-<form id="btn" action="/cars/new" method="get">
-  <input type="submit" value="Add a New Car">
-</form>
-<table style="width:50%">
-  <tr>
-    <th>Car ID</th>
-    <th>Make</th>
-    <th>Model</th>
-    <th>Price</th>
-    <th>Dealership</th>
-  </tr>
-<% for car in @cars %>
-  <tr>
-    <td> <a href="/cars/<%= car.id %>"><%= car.id %></a> </td>
-    <td><%= car.make %></td>
-    <td><%= car.model %></td>
-    <td> £<%= car.price %></td>
-    <td> <a href="/shops/<%= car.shop_id %>"> <%= car.shop %></a></td>
-  </tr>
-  <% end %>
+  <div class="btn">
+    <form id="btn" action="/cars/new" method="get">
+      <input type="submit" value="Add a New Car">
+    </form>
+  </div>
 
-</table>
+  <div class="table">
+    <table style="width:50%">
+      <tr>
+        <th>Car ID</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Price</th>
+        <th>Dealership</th>
+      </tr>
+    <% for car in @cars %>
+    <tr>
+      <td><a href="/cars/<%= car.id %>"><%= car.id %></a></td>
+      <td><%= car.make %></td>
+      <td><%= car.model %></td>
+      <td>£<%= car.price %></td>
+      <td><a href="/shops/<%= car.shop_id %>"><%= car.shop %></a></td>
+    </tr>
+    <% end %>
+    </table>
+  </div>

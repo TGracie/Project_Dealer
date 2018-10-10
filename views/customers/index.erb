@@ -1,18 +1,21 @@
 <h2>All Customers</h2>
-<p class="btn">
-<a class="btn--action" href="/customers/new">Add a new customer!</a>
-</p>
-<table>
-<tr>
-  <th>ID</th>
-  <th>Name</th>
-  <th>Previous Brand</th>
-</tr>
-<% for customer in @customers %>
-<tr>
-  <td><a href="/customers/<%= customer.id %>"><%= customer.id %></a></td>
-  <td><%= customer.name %></td>
-  <td><%= customer.previous_brand %></td>
-</tr>
-<% end %>
-</table>
+  <div class="btn">
+    <a class="btn--action" href="/customers/new">Add a new customer!</a>
+  </div>
+
+<div class="table">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Previous Brand</th>
+    </tr>
+    <% for customer in @customers %>
+    <tr>
+      <td><a href="/customers/<%= customer.id %>"><%= customer.id %></a></td>
+      <td><%= customer.name %></td>
+      <td><%= customer.previous_brand %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

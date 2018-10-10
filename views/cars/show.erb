@@ -9,8 +9,14 @@
 <hr>
   <p>Price: £<%= @car.price%></p>
 <hr>
-  <a href="/cars/<%= @car.id %>/edit">Edit Car Details</a>
+
+  <div class="btn">
+    <a href="/cars/<%= @car.id %>/edit">Edit Car Details</a>
+  </div>
+
 <hr>
-  <form action="/cars/<%= @car.id %>/delete" method="post">
-    <input type="submit" value="Delete Car">
-</form>
+  <div class="submit">
+    <form action="/cars/<%= @car.id %>/delete" method="post">
+      <input type="submit" value="Delete Car">
+    </form>
+  </div>
