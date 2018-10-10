@@ -44,6 +44,7 @@ class Customer
   ## OBJECT METHODS ##
 
   def save
+    binding.pry
     sql = "INSERT INTO customers(
     name,
     budget,
@@ -77,21 +78,34 @@ class Customer
     values = [@id]
     SqlRunner.run(sql, values)
   end
-  #######################################################
-  #
-  # def dealers
-  #   sql = "SELECT * FROM cars WHERE make = $1"
-  #   values = [@previous_brand]
-  #   result = SqlRunner.run(sql, values)
-  #   dealers = Car.new(result)
-  #   return dealers
-  # end
+  ######################################################
+
+  def in_budget
+    sql = "SELECT * FROM cars WHERE price <= $1;"
+    values = [@budget]
+    results = SqlRunner.run(sql, values)
+    cars = results.map{|result| Car.new(result)}
+    return cars
+  end
   ######################################################
   def cars
-    sql = "SELECT * FROM cars WHERE make = $1"
+    sql = "SELECT * FROM cars WHERE make = $1;"
     values = [@previous_brand]
-    result = SqlRunner.run(sql, values)
-    cars = Car.new(result)
+    results = SqlRunner.run(sql, values)
+    #full array not single hash
+    #map them instead
+    cars = results.map{|result| Car.new(result)}
+    return cars
+  end
+  ######################################################
+
+  def both
+    sql = "SELECT * FROM cars
+           WHERE make = $1
+           AND price <= $2;"
+    values = [@previous_brand, @budget]
+    results = SqlRunner.run(sql, values)
+    cars = results.map{|result| Car.new(result)}
     return cars
   end
   #####################################################################

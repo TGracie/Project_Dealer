@@ -1,0 +1,26 @@
+<h2>Cars that <%= @customer.name %> Can Afford/May Like</h2>
+
+<div class="table">
+  <table>
+    <tr>
+      <th>Car ID</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Style</th>
+      <th>Price</th>
+      <th>Dealership</th>
+      <th></th>
+    </tr>
+    <% for car in  @customer.both%>
+    <tr>
+      <td><%=  car.id %></td>
+      <td><%=  car.make %></td>
+      <td><%=  car.model %></td>
+      <td><%=  car.style %></td>
+      <td>£<%=  car.price %></td>
+      <td><a href="/shops/<%= car.shop_id %>"><%= car.shop %></a></td>
+      <td><a href="/cars/<%= car.id %>">View Car</a> </td>
+    </tr>
+  <% end %>
+</table>
+</div>

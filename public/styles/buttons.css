@@ -1,8 +1,8 @@
-.btn {
+#btn {
   background-color: blue;
   cursor: pointer;
 }
 
-.btn--action {
+#btn--action {
   background-colour: green;
 }

@@ -7,6 +7,8 @@
     <th>Email</th>
     <th>Previous Brand</th>
     <th>Budget</th>
+    <th></th>
+    <th></th>
   </tr>
   <tr>
     <td><%= @customer.id %></td>
@@ -20,5 +22,11 @@
   </tr>
 </table>
 <br>
-
+<a href="/customers/<%= @customer.id %>/relevant">Cars This Customer May Like</a>
+<br>
+<br>
+<a href="/customers/<%= @customer.id %>/in-budget">Cars This Customer Can Afford</a>
+<br>
+<br>
+<a href="/customers/<%= @customer.id %>/both">Cars This Customer Will Like and Can Afford</a>
 </form>

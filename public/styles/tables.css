@@ -1,12 +1,10 @@
 td, th {
   text-align: center;
+  padding: 5px;
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
 
-td {
-  padding: 5px 10px;
-}
 th{
   border-bottom: 1px solid black;
 }
@@ -15,4 +13,5 @@ table {
   margin: 3px;
   border: 2px solid red;
   border-collapse: collapse;
+  background-color: papayawhip;
 }

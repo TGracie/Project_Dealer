@@ -52,3 +52,25 @@ post('/customers/:id/delete') do
   @customer.delete
   redirect to('/customers')
 end
+
+## CUSTOMER RELEVANT CARS ##
+get ('/customers/:id/relevant') do
+  id = params[:id].to_i
+  @customer = Customer.find(id)
+  @customer.cars
+  erb(:"customers/brands")
+end
+
+get ('/customers/:id/in-budget') do
+  id = params[:id].to_i
+  @customer = Customer.find(id)
+  @customer.budget
+  erb(:"customers/budget")
+end
+
+get ('/customers/:id/both') do
+  id = params[:id].to_i
+  @customer = Customer.find(id)
+  @customer.both
+  erb(:"customers/both")
+end

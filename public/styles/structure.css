@@ -2,9 +2,12 @@ body {
   padding-top: 3px;
   padding-left: 10px;
   border: 3px solid black;
-  /* background: url('/images/project_background.jpg') */
+  /* background: url('/images/project_background.jpg'); */
+  background-size: 100%;
+  background-repeat: no-repeat;
   margin: 0px;
   font-family: 'Arial', sans-serif;
+  /* background-color: papayawhip; */
 }
 
 footer {
@@ -13,15 +16,19 @@ footer {
 
 
 h2 {
+  padding-left: 5px;
   font-family: 'Bookman', serif;
   font-size: 1.5em;
   color: #035Eb4;
+  background-color: lightgreen;
 }
 
 p {
+  padding-left: 5px;
   font-family: serif;
   font-size: 1em;
   color: black;
+  background-color: yellow;
 }
 
 
@@ -30,6 +37,7 @@ nav {
   margin: 0px;
   padding-right: 20px;
   border: 1.5px solid black;
+  background-color: papayawhip;
 }
 nav ul li {
   margin-bottom: 10px;
