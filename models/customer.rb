@@ -44,7 +44,6 @@ class Customer
   ## OBJECT METHODS ##
 
   def save
-    binding.pry
     sql = "INSERT INTO customers(
     name,
     budget,

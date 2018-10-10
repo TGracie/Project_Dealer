@@ -1,21 +1,23 @@
-<hr>
+
+<div class="wrapper">
   <h2>Car <%= @car.id %></h2>
-<hr>
+
   <p>Make: <%= @car.make %></p>
-<hr>
+
   <p>Model: <%= @car.model %></p>
-<hr>
+
   <p>Style: <%= @car.style%></p>
-<hr>
+
   <p>Price: £<%= @car.price%></p>
-<hr>
+</div>
+
 
   <div class="btn">
     <a href="/cars/<%= @car.id %>/edit">Edit Car Details</a>
   </div>
 
 <hr>
-  <div class="submit">
+  <div class="delete">
     <form action="/cars/<%= @car.id %>/delete" method="post">
       <input type="submit" value="Delete Car">
     </form>

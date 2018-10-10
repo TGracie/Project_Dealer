@@ -1,23 +1,45 @@
 <hr>
-  <h2></h2>
+  <h2>Dealership Details</h2>
+  <h3>Dealership Name: <%= @shop.name %></h3>
+  <h3>Dealer Cash: £<%= @shop.till %></h3>
 <hr>
-  <p>Dealership Name: <%= @shop.name %></p>
-<hr>
-  <p>Dealer Cash: £<%= @shop.till %></p>
+
+<h2>Cars in Stock</h2>
+<div class="table">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Price</th>
+    </tr>
+    <% for car in @cars %>
+    <tr>
+      <td><%= car.id %></td>
+      <td><%= car.make %></td>
+      <td><%= car.model %></td>
+      <td>£<%= car.price %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td><b>Stock Value</b></td>
+      <td>£<%= @shop.value %></td>
+    </tr>
+  </table>
+
+</div>
+
+<br>
+
+<div class="btn">
   <a href="/shops/<%= @shop.id %>/edit">Edit Dealership Details</a>
-<hr>
+</div>
+<br>
 
-  <p>Cars in Stock</p>
-  <% for car in @cars %>
-  <ul>
-    <li><%= car.make %></li>
-    <br>
-    <li><%= car.model %></li>
-    <br>
-    <br>
-  </ul>
-  <% end %>
-
+<div class="delete">
   <form action="/shops/<%= @shop.id %>/delete" method="post">
     <input type="submit" value="Delete Dealership">
-</form>
+  </form>
+</div>

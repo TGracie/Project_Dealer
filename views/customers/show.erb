@@ -1,32 +1,46 @@
 <h2>Customer <%= @customer.id %> Details</h2>
 <br>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Customer Name</th>
-    <th>Email</th>
-    <th>Previous Brand</th>
-    <th>Budget</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <tr>
-    <td><%= @customer.id %></td>
-    <td><%= @customer.name %></td>
-    <td><%= @customer.email %></td>
-    <td><%= @customer.previous_brand %></td>
-    <td>£<%= @customer.budget %></td>
-    <td><a href="/customers/<%= @customer.id %>/edit">Edit</a></td>
-    <td><form class="" action="/customers/<%= @customer.id %>/delete" method="post">
-      <input type="submit" value="Delete"></td>
-  </tr>
-</table>
-<br>
-<a href="/customers/<%= @customer.id %>/relevant">Cars This Customer May Like</a>
-<br>
-<br>
-<a href="/customers/<%= @customer.id %>/in-budget">Cars This Customer Can Afford</a>
-<br>
-<br>
-<a href="/customers/<%= @customer.id %>/both">Cars This Customer Will Like and Can Afford</a>
+<div class="table">
+  <table style="width:50%">
+    <tr>
+      <th>ID</th>
+      <th>Customer Name</th>
+      <th>Email</th>
+      <th>Previous Brand</th>
+      <th>Budget</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td><%= @customer.id %></td>
+      <td><%= @customer.name %></td>
+      <td><%= @customer.email %></td>
+      <td><%= @customer.previous_brand %></td>
+      <td>£<%= @customer.budget %></td>
+      <td><a href="/customers/<%= @customer.id %>/edit">Edit</a></td>
+      <td><form class="" action="/customers/<%= @customer.id %>/delete" method="post">
+        <input type="submit" value="Delete"></td>
+      </tr>
+    </table>
+  </div>
+    <br>
+
+  <div class="btn">
+    <a href="/customers/<%= @customer.id %>/relevant">Cars This Customer May Like</a>
+  </div>
+
+    <br>
+    <br>
+
+  <div class="btn">
+    <a href="/customers/<%= @customer.id %>/in-budget">Cars This Customer Can Afford</a>
+  </div>
+
+    <br>
+    <br>
+
+  <div class="btn">
+    <a href="/customers/<%= @customer.id %>/both">Cars This Customer Will Like and Can Afford</a>
+  </div>
+  
 </form>
