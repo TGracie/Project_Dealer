@@ -1,8 +1,32 @@
-#btn {
-  background-color: blue;
+.btn {
+  float: center;
+}
+.btn a{
   cursor: pointer;
+  margin: 30px;
+  padding: 8px 18px;
+  border: 1px solid #000;
+  position: relative;
+  background-color: papayawhip;
+  border-radius: 5px;
+}
+.btn a:active {
+  top: 3px;
+  background-color: #0386b4;
 }
 
-#btn--action {
-  background-colour: green;
+
+a, a:link, a:visited {
+  color: #b42b03;
+}
+a:hover, a:active, a:focus {
+  color: #03b408;
+}
+
+.submit {
+  background-color: #08d90d;
+}
+
+.delete {
+  background-color: red;
 }

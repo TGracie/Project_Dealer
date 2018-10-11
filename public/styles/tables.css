@@ -9,9 +9,14 @@ th{
   border-bottom: 1px solid black;
 }
 
-table {
-  margin: 3px;
-  border: 2px solid red;
+.table {
+  margin: 10px;
+  border: 2px solid blue;
   border-collapse: collapse;
   background-color: papayawhip;
+  border-radius: 25px;
 }
+
+/* nothing is the tag Name
+.thing is the CLASS
+#thing is the id */

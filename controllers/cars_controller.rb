@@ -36,6 +36,7 @@ end
 get('/cars/:id/edit') do
   @id = params[:id].to_i
   @car = Car.find(@id)
+  @shops = Shop.all
   erb(:"cars/edit")
 end
 

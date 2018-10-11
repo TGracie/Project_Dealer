@@ -1,4 +1,4 @@
-<h2>Cars that <%= @customer.name %> May Like</h2>
+<h2>Cars for <%= @customer.name %></h2>
 
 <div class="table">
   <table>
@@ -11,7 +11,7 @@
       <th>Dealership</th>
       <th></th>
     </tr>
-    <% for car in  @customer.cars%>
+    <% for car in  @customer_option%>
     <tr>
       <td><%=  car.id %></td>
       <td><%=  car.make %></td>

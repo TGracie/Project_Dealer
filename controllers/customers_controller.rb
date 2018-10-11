@@ -54,23 +54,35 @@ post('/customers/:id/delete') do
 end
 
 ## CUSTOMER RELEVANT CARS ##
-get ('/customers/:id/relevant') do
+get ('/customers/:id/:choice') do
   id = params[:id].to_i
   @customer = Customer.find(id)
-  @customer.cars
-  erb(:"customers/brands")
-end
+  @customer_option = @customer.cars if params["choice"] == "relevant"
+  @customer_option = @customer.in_budget if params["choice"] == "in-budget"
+  @customer_option = @customer.both if params["choice"] == "both"
+    erb(:"customers/filtered")
+  end
 
-get ('/customers/:id/in-budget') do
-  id = params[:id].to_i
-  @customer = Customer.find(id)
-  @customer.budget
-  erb(:"customers/budget")
-end
+# get ('/customers/:id/relevant') do
+#   id = params[:id].to_i
+#   @customer = Customer.find(id)
+#   @customer.cars
+#   erb(:"customers/brands")
+# end
+#
+# get ('/customers/:id/in-budget') do
+#   id = params[:id].to_i
+#   @customer = Customer.find(id)
+#   @customer.budget
+#   erb(:"customers/budget")
+# end
+#
+# get ('/customers/:id/both') do
+#   id = params[:id].to_i
+#   @customer = Customer.find(id)
+#   @customer.both
+#   erb(:"customers/both")
+# end
 
-get ('/customers/:id/both') do
-  id = params[:id].to_i
-  @customer = Customer.find(id)
-  @customer.both
-  erb(:"customers/both")
-end
+
+## give these methods a variable for the method being called and then plug that in to the same view page

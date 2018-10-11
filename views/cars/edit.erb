@@ -4,6 +4,15 @@
   <div class="wrapper">
 
     <div class="form-element">
+      <label for="shop-select">Dealership</label>
+      <select name="shop_id" id="shop_select">
+        <% @shops.each do |shop| %>
+            <option value=<%= shop.id %>><%= shop.name %></option>
+            <% end %>
+          </select>
+    </div>
+
+    <div class="form-element">
       <label for="car-make">Make</label>
       <input type="text" name="make" id="car-make" value="<%= @car.make %>">
     </div>
