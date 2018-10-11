@@ -9,16 +9,14 @@
   <p>Style: <%= @car.style%></p>
 
   <p>Price: £<%= @car.price%></p>
+  <div class="btn">
+    <form action="/cars/<%= @car.id %>/delete" method="post">
+      <input class="delete" type="submit" value="Delete Car">
+    </form>
+  </div>
 </div>
 
-
+<br>
   <div class="btn">
     <a href="/cars/<%= @car.id %>/edit">Edit Car Details</a>
-  </div>
-
-<hr>
-  <div class="delete">
-    <form action="/cars/<%= @car.id %>/delete" method="post">
-      <input type="submit" value="Delete Car">
-    </form>
   </div>

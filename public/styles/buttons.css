@@ -3,8 +3,8 @@
 }
 .btn a{
   cursor: pointer;
-  margin: 30px;
-  padding: 8px 18px;
+  margin: 10px;
+  padding: 8px;
   border: 1px solid #000;
   position: relative;
   background-color: papayawhip;
@@ -12,7 +12,7 @@
 }
 .btn a:active {
   top: 3px;
-  background-color: #0386b4;
+  background-color: #cc6600;
 }
 
 
@@ -24,9 +24,13 @@ a:hover, a:active, a:focus {
 }
 
 .submit {
+  margin-left: 15px;
+  border-radius: 5px;
   background-color: #08d90d;
 }
 
 .delete {
+  margin-left: 15px;
+  border-radius: 5px;
   background-color: red;
 }

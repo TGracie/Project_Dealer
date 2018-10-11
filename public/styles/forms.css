@@ -10,4 +10,13 @@
 }
 .form-element {
   width: 100%;
+  align-items: center;
+}
+
+.wrapper {
+  background-color: papayawhip;
+  border-radius: 5px;
+  border: 3px solid blue;
+  padding: 5px;
+  margin: 3px;
 }

@@ -19,7 +19,7 @@
       <td>£<%= @customer.budget %></td>
       <td><a href="/customers/<%= @customer.id %>/edit">Edit</a></td>
       <td><form class="" action="/customers/<%= @customer.id %>/delete" method="post">
-        <input type="submit" value="Delete"></td>
+        <input class="delete" type="submit" value="Delete"></td>
       </tr>
     </table>
   </div>
@@ -42,5 +42,5 @@
   <div class="btn">
     <a href="/customers/<%= @customer.id %>/both">Cars This Customer Will Like and Can Afford</a>
   </div>
-  
+
 </form>

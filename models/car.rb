@@ -62,11 +62,12 @@ class Car
           make,
           model,
           style,
-          price
+          price,
+          image
         )
-        VALUES ($1, $2, $3, $4, $5)
+        VALUES ($1, $2, $3, $4, $5, $6)
         RETURNING id;"
-        values = [@shop_id, @make, @model, @style, @price]
+        values = [@shop_id, @make, @model, @style, @price, @image]
         @id = SqlRunner.run(sql,values)[0]['id'].to_i
   end
   ####################################################################
@@ -74,15 +75,16 @@ class Car
   def update
     sql = "UPDATE cars
         SET (
+          shop_id,
           make,
           model,
           style,
           price,
           image
           ) =
-          ($1, $2, $3, $4, $5)
-          WHERE id = $6"
-          values = [@make, @model, @style, @price, @image, @id]
+          ($1, $2, $3, $4, $5, $6)
+          WHERE id = $7"
+          values = [@shop_id, @make, @model, @style, @price, @image, @id]
           SqlRunner.run(sql, values)
   end
   ####################################################################

@@ -2,7 +2,7 @@
   <h2>Dealership Details</h2>
   <h3>Dealership Name: <%= @shop.name %></h3>
   <h3>Dealer Cash: £<%= @shop.till %></h3>
-<hr>
+<br>
 
 <h2>Cars in Stock</h2>
 <div class="table">
@@ -12,6 +12,7 @@
       <th>Make</th>
       <th>Model</th>
       <th>Price</th>
+      <th></th>
     </tr>
     <% for car in @cars %>
     <tr>
@@ -19,6 +20,7 @@
       <td><%= car.make %></td>
       <td><%= car.model %></td>
       <td>£<%= car.price %></td>
+      <td><a href="/cars/<%= car.id %>">View</a></td>
     </tr>
     <% end %>
     <tr>
@@ -26,6 +28,7 @@
       <td></td>
       <td><b>Stock Value</b></td>
       <td>£<%= @shop.value %></td>
+      <td></td>
     </tr>
   </table>
 
@@ -38,8 +41,8 @@
 </div>
 <br>
 
-<div class="delete">
+<div class="btn">
   <form action="/shops/<%= @shop.id %>/delete" method="post">
-    <input type="submit" value="Delete Dealership">
+    <input class="delete" type="submit" value="Delete Dealership">
   </form>
 </div>
