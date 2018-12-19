@@ -34,9 +34,13 @@ class Car
   ####################################################################
 
   def self.find(id)
+    # I want to get all information from the cars table about a specific car
     sql = "SELECT * FROM cars WHERE id = $1"
+    # Need to define the value to be plugged in to the sql runner here
     values = [id]
+    # get the hash object back by using the runner
     car = SqlRunner.run(sql, values)
+    # create a new object from that hash
     result = Car.new(car.first)
     # binding.pry
     return result
